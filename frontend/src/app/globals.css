@@ -1,0 +1,314 @@
+/* ============================================
+   ГЛОБАЛЬНЫЕ СТИЛИ
+   Здесь находятся базовые стили для всего приложения
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+}
+
+body {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ============================================
+   ОСНОВНОЕ ПРИЛОЖЕНИЕ
+   ============================================ */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* ============================================
+   ШАПКА (HEADER)
+   ИЗМЕНЯЙ: background-color, padding, цвет текста и т.д.
+   ============================================ */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* ЦВЕТ: Измени значения градиента (667eea и 764ba2) на свои цвета */
+  color: white;
+  padding: 20px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid #764ba2;
+  /* МОЖНО ИЗМЕНИТЬ: толщину border-bottom на line: border-bottom: 5px solid ... */
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  /* МОЖНО ИЗМЕНИТЬ: размер шрифта (28px), вес (700) */
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-top: 5px;
+  /* ПОДЗАГОЛОВОК: Измени текст в компоненте Header */
+}
+
+/* ============================================
+   ОСНОВНОЙ КОНТЕНТ
+   ============================================ */
+.main-content {
+  flex: 1;
+  padding: 40px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ============================================
+   ПАНЕЛЬ С КНОПКАМИ
+   ИЗМЕНЯЙ: расстояния между кнопками, их расположение
+   ============================================ */
+.button-panel {
+  display: flex;
+  gap: 20px;
+  /* РАССТОЯНИЕ: Поменяй 20px на нужное тебе значение */
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  /* МОБИЛЬНОСТЬ: Установи flex-wrap: nowrap если кнопки должны быть в одну строку без переноса */
+}
+
+/* ============================================
+   КНОПКИ
+   ИЗМЕНЯЙ: размер, цвет, форму, тень, шрифт
+   ============================================ */
+.button {
+  padding: 12px 28px;
+  /* РАЗМЕР КНОПКИ: Первое число (12px) - высота, второе (28px) - ширина */
+  font-size: 16px;
+  /* РАЗМЕР ШРИФТА: Возможные значения 14px, 16px, 18px, 20px */
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  /* ФОРМА: Измени 8px на меньшее значение (4px) для углов или больше для округлости */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* ЭФФЕКТ ХОВЕРА: all 0.3s ease - скорость и тип анимации при наведении */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* ТЕНЬ: Измени rgba(0, 0, 0, 0.1) для прозрачности тени */
+  font-family: inherit;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  /* ХОВЕР ЭФФЕКТ: translateY(-2px) - приподнимает кнопку на 2 пикселя при наведении */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* КНОПКА "ЗАГРУЗИТЬ ДОКУМЕНТЫ" */
+.button-upload {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  /* ЦВЕТ: Кнопка загрузки - измени цвета градиента (f093fb и f5576c) */
+  color: white;
+}
+
+.button-upload:hover {
+  background: linear-gradient(135deg, #f093fb 0%, #e53e56 100%);
+  /* ХОВЕР ЦВЕТ: Цвет при наведении на кнопку загрузки */
+}
+
+/* КНОПКА "РАССЧИТАТЬ ОТВЕТ" */
+.button-calculate {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  /* ЦВЕТ: Кнопка расчета - измени цвета градиента (4facfe и 00f2fe) */
+  color: white;
+}
+
+.button-calculate:hover {
+  background: linear-gradient(135deg, #4facfe 0%, #00e0ec 100%);
+  /* ХОВЕР ЦВЕТ: Цвет при наведении на кнопку расчета */
+}
+
+/* КНОПКА "ЗАГРУЗИТЬ В ВЕКТОРНОЕ ХРАНИЛИЩЕ" */
+.button-vector {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  /* ЦВЕТ: Кнопка загрузки в хранилище - измени цвета градиента */
+  color: white;
+}
+
+.button-vector:hover {
+  background: linear-gradient(135deg, #f093fb 0%, #e53e56 100%);
+  /* ХОВЕР ЦВЕТ: Цвет при наведении */
+}
+
+/* КНОПКА "ОЧИСТИТЬ ХРАНИЛИЩЕ" */
+.button-clear {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  /* ЦВЕТ: Кнопка очистки хранилища - измени цвета градиента (fa709a и fee140) */
+  color: white;
+}
+
+.button-clear:hover {
+  background: linear-gradient(135deg, #f9658a 0%, #fed330 100%);
+  /* ХОВЕР ЦВЕТ: Цвет при наведении на кнопку очистки */
+}
+
+/* ============================================
+   ОКНО РЕЗУЛЬТАТОВ
+   ИЗМЕНЯЙ: размер, цвет, тень, загругленность углов
+   ============================================ */
+.results-window {
+  background: white;
+  border: 2px solid #e0e0e0;
+  /* ГРАНИЦА: Измени цвет границы (e0e0e0) или толщину (2px) */
+  border-radius: 12px;
+  /* УГЛЫ: Измени значение 12px для более острых (4px) или округлых (20px) углов */
+  padding: 30px;
+  /* ВНУТРЕННИЙ ОТСТУП: Увеличь/уменьши значение для большого/меньшего отступа */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  /* ТЕНЬ: Регулируй rgba значения для более мягкой/острой тени */
+  min-height: 300px;
+  /* МИНИМАЛЬНАЯ ВЫСОТА: Измени 300px на нужный размер */
+}
+
+.results-header {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+  /* ИЗМЕНЯЙ: размер шрифта, цвет, толщину разделителя */
+}
+
+.results-content {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  /* white-space: pre-wrap сохраняет форматирование текста */
+  word-wrap: break-word;
+}
+
+.results-empty {
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  padding: 40px 20px;
+  /* ПУСТОЕ СОСТОЯНИЕ: Текст отображается когда еще нет результатов */
+}
+
+/* ============================================
+   СТАТУС ЗАГРУЗКИ
+   ============================================ */
+.loading {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #667eea;
+  border-radius: 50%;
+  animation: pulse 1.2s infinite;
+  margin-right: 8px;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   ФАЙЛОВЫЙ ИНПУТ (СКРЫТЫЙ)
+   ============================================ */
+.file-input {
+  display: none;
+  /* Скрывает стандартный файловый инпут */
+}
+
+/* ============================================
+   АДАПТИВНЫЙ ДИЗАЙН (МОБИЛЬНЫЕ УСТРОЙСТВА)
+   ============================================ */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .button-panel {
+    flex-direction: column;
+    /* На мобильных кнопки располагаются вертикально */
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+    /* На мобильных кнопки занимают всю ширину */
+  }
+
+  .results-window {
+    padding: 20px;
+    min-height: 250px;
+  }
+}
+
+/* ============================================
+   ТЕМНАЯ ТЕМА (ОПЦИОНАЛЬНО)
+   Добавь data-theme="dark" в тег body для включения
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+  }
+
+  .app-container {
+    background-color: #2d2d2d;
+  }
+
+  .results-window {
+    background: #3d3d3d;
+    border-color: #444;
+  }
+
+  .results-header {
+    color: #e0e0e0;
+    border-bottom-color: #444;
+  }
+
+  .results-content {
+    color: #b0b0b0;
+  }
+}
